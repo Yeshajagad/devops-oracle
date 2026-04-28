@@ -1,4 +1,4 @@
-from langchain.schema import Document
+from langchain_core.documents import Document
 from app.services.vectorstore import get_vectorstore
 from app.config import MAX_RETRIEVAL_DOCS
 

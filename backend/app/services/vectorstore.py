@@ -1,7 +1,7 @@
 import os
 import json
 from langchain_community.vectorstores import Chroma
-from langchain.schema import Document
+from langchain_core.documents import Document
 from app.services.embeddings import get_embeddings
 from app.config import CHROMA_DIR
 

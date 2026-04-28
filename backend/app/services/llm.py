@@ -1,5 +1,5 @@
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from app.config import GROQ_API_KEY, LLM_MODEL
 
 SYSTEM_PROMPT = """You are DevOps Oracle, an expert AI assistant that deeply understands codebases.

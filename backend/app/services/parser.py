@@ -1,4 +1,4 @@
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 
 def parse_files_to_documents(files: list[dict], source_name: str) -> list[Document]:
