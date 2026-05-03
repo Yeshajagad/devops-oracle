@@ -1,16 +1,12 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from app.config import EMBED_MODEL
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_groq import ChatGroq
+import os
 
 _embeddings_instance = None
 
-
 def get_embeddings():
-    """Return a cached embedding model instance."""
     global _embeddings_instance
     if _embeddings_instance is None:
-        _embeddings_instance = HuggingFaceEmbeddings(
-            model_name=EMBED_MODEL,
-            model_kwargs={"device": "cpu"},
-            encode_kwargs={"normalize_embeddings": True},
-        )
+        from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
+        _embeddings_instance = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     return _embeddings_instance

@@ -37,3 +37,6 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
+
+
+# uvicorn app.main:app --reload 
